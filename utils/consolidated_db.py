@@ -23,6 +23,11 @@ class ConsolidatedDB:
         "/home/ubuntu/fusione-core-system/sql/contencioso.sqlite",
         "/home/ubuntu/fusione-core-system/sql/geral.sqlite",
         "/home/ubuntu/fusione-core-system/sql/clientes.sqlite",
+        # Caminhos do perfil VS Code (consolidados)
+        r"c:\consolidados\fusione_contencioso_consolidado.db",
+        r"c:\consolidados\pessoas.db",
+        r"c:\consolidados\contratos.db",
+        r"c:\consolidados\requisicoes.sqlite",
         # Caminhos Windows (produção)
         r"C:\Users\Gustavo_ri\fusione-core-system\sql\contencioso.sqlite",
         r"C:\Users\Gustavo_ri\fusione-core-system\sql\geral.sqlite", 

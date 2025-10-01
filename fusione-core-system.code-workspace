@@ -1,0 +1,173 @@
+{
+	"folders": [
+		{
+			"name": "Fusione Core System",
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.languageServer": "Pylance",
+		"python.defaultInterpreterPath": "./venv/bin/python",
+		"git.ignoreLimitWarning": true,
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 1000,
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		},
+		"python.formatting.provider": "black",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"workbench.colorTheme": "Deep Blue",
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#003A70",
+			"activityBar.foreground": "#ffffff",
+			"statusBar.background": "#003A70",
+			"statusBar.foreground": "#ffffff",
+			"titleBar.activeBackground": "#003A70",
+			"titleBar.activeForeground": "#ffffff"
+		},
+		"files.associations": {
+			"*.py": "python",
+			"*.sql": "sql",
+			"*.md": "markdown"
+		},
+		"sqltools.connections": [
+			{
+				"name": "Fusione SQLite - Contencioso",
+				"driver": "SQLite",
+				"database": "./sql/contencioso.sqlite",
+				"group": "Fusione Databases"
+			},
+			{
+				"name": "Fusione SQLite - Geral",
+				"driver": "SQLite", 
+				"database": "./sql/geral.sqlite",
+				"group": "Fusione Databases"
+			},
+			{
+				"name": "Fusione SQLite - Clientes",
+				"driver": "SQLite",
+				"database": "./sql/clientes.sqlite", 
+				"group": "Fusione Databases"
+			},
+			{
+				"name": "Fusione MariaDB - Produção",
+				"driver": "MariaDB",
+				"server": "localhost",
+				"port": 3306,
+				"database": "fusione",
+				"username": "root",
+				"group": "Fusione Production"
+			}
+		],
+		"python.testing.pytestEnabled": true,
+		"python.testing.unittestEnabled": false,
+		"python.testing.pytestArgs": [
+			"tests"
+		],
+		"streamlit.serverPort": 8501,
+		"streamlit.serverAddress": "localhost"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-python.python",
+			"ms-python.debugpy", 
+			"ms-toolsai.jupyter",
+			"mtxr.sqltools",
+			"mtxr.sqltools-driver-sqlite",
+			"mtxr.sqltools-driver-mysql",
+			"github.copilot",
+			"ms-vscode.vscode-json",
+			"redhat.vscode-yaml",
+			"davidanson.vscode-markdownlint"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Run Streamlit App",
+				"type": "shell",
+				"command": "streamlit",
+				"args": ["run", "app.py"],
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				},
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "new"
+				},
+				"problemMatcher": []
+			},
+			{
+				"label": "Install Dependencies",
+				"type": "shell",
+				"command": "pip",
+				"args": ["install", "-r", "requirements.txt"],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "new"
+				}
+			},
+			{
+				"label": "Create Demo Databases",
+				"type": "shell",
+				"command": "python",
+				"args": ["sql/create_demo_databases.py"],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "new"
+				}
+			},
+			{
+				"label": "Run Tests",
+				"type": "shell",
+				"command": "pytest",
+				"args": ["tests/", "-v"],
+				"group": "test",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "new"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Debug Streamlit App",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/app.py",
+				"console": "integratedTerminal",
+				"args": [],
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}"
+				}
+			},
+			{
+				"name": "Debug Dashboard",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder}/pages/00_Dashboard_Executivo.py",
+				"console": "integratedTerminal",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder}"
+				}
+			}
+		]
+	}
+}

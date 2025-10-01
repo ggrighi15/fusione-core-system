@@ -1,0 +1,53 @@
+{
+    "python.defaultInterpreterPath": "./venv/bin/python",
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "workbench.colorTheme": "Deep Blue",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#003A70",
+        "activityBar.foreground": "#ffffff",
+        "statusBar.background": "#003A70", 
+        "statusBar.foreground": "#ffffff",
+        "titleBar.activeBackground": "#003A70",
+        "titleBar.activeForeground": "#ffffff"
+    },
+    "files.associations": {
+        "*.py": "python",
+        "*.sql": "sql",
+        "*.md": "markdown"
+    },
+    "sqltools.connections": [
+        {
+            "name": "Fusione SQLite - Contencioso",
+            "driver": "SQLite",
+            "database": "./sql/contencioso.sqlite",
+            "group": "Fusione Databases"
+        },
+        {
+            "name": "Fusione SQLite - Geral", 
+            "driver": "SQLite",
+            "database": "./sql/geral.sqlite",
+            "group": "Fusione Databases"
+        },
+        {
+            "name": "Fusione SQLite - Clientes",
+            "driver": "SQLite",
+            "database": "./sql/clientes.sqlite",
+            "group": "Fusione Databases"
+        }
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "streamlit.serverPort": 8501,
+    "streamlit.serverAddress": "localhost"
+}

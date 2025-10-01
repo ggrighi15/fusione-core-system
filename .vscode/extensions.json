@@ -1,0 +1,24 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.pylint",
+        "ms-python.black-formatter",
+        "ms-toolsai.jupyter",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-sqlite",
+        "mtxr.sqltools-driver-mysql",
+        "github.copilot",
+        "ms-vscode.vscode-json",
+        "redhat.vscode-yaml",
+        "davidanson.vscode-markdownlint",
+        "alefragnani.project-manager",
+        "donjayamanne.githistory",
+        "mechatroner.rainbow-csv",
+        "ms-azuretools.vscode-docker"
+    ],
+    "unwantedRecommendations": [
+        "ms-python.flake8",
+        "ms-python.mypy-type-checker"
+    ]
+}
